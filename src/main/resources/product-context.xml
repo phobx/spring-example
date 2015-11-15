@@ -8,12 +8,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
+ 	<context:annotation-config/>
 	<bean name="productService" class="service.impl.ProductServiceImpl">
-		<property name="productDao" ref="productDao" />
+		<!-- <property name="productDao" ref="productDao" /> -->
 	</bean>
-	
+
 	<bean name="productDao" class="dao.impl.ProductDaoDummyImpl" />
-	
 	<!--  
 	<bean name="productDao" class="dao.impl.ProductDaoJDBCImpl">
 		<constructor-arg ref="jdbcTemplate" />

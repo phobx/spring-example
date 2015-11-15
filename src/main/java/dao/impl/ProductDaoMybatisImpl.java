@@ -13,25 +13,26 @@ import dto.Product;
 
 public class ProductDaoMybatisImpl extends SqlSessionDaoSupport implements ProductDao {
 
-    private SqlSessionTemplate sqlSessionTemplate;
+	private SqlSessionTemplate sqlSessionTemplate;
 
-    private SqlSessionFactory sqlSessionFactory;
+	private SqlSessionFactory sqlSessionFactory;
 
-    public ProductDaoMybatisImpl(SqlSessionFactory sqlSessionFactory) {
-	this.sqlSessionFactory = sqlSessionFactory;
-    }
+	public ProductDaoMybatisImpl(SqlSessionFactory sqlSessionFactory) {
+		this.sqlSessionFactory = sqlSessionFactory;
+	}
 
-    public ProductDaoMybatisImpl(SqlSessionTemplate sqlSessionTemplate) {
-	this.sqlSessionTemplate = sqlSessionTemplate;
-    }
+	public ProductDaoMybatisImpl(SqlSessionTemplate sqlSessionTemplate) {
+		this.sqlSessionTemplate = sqlSessionTemplate;
+	}
 
-    @Override
-    public List<Product> getAllProducts() {
-	SqlSession sqlSession = sqlSessionTemplate.getSqlSessionFactory().openSession();
-	sqlSession = sqlSessionFactory.openSession();
-	sqlSession = getSqlSession();
+	@Override
+	public List<Product> getAllProducts() {
+		@SuppressWarnings("unused")
+		SqlSession sqlSession = sqlSessionTemplate.getSqlSessionFactory().openSession();
+		sqlSession = sqlSessionFactory.openSession();
+		sqlSession = getSqlSession();
 
-	return new LinkedList<Product>();
-    }
+		return new LinkedList<Product>();
+	}
 
 }

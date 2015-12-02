@@ -14,7 +14,7 @@
 	<!-- <context:component-scan base-package="web"/> -->
 
 	<bean class="web.ProductController">
-		<constructor-arg ref="productService" />
+		<!-- <constructor-arg ref="productService" /> -->
 	</bean>
 
 	<mvc:resources mapping="/**" location="/static/" />
